@@ -1,0 +1,470 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6F9E6FF1-57FB-44F9-ABA6-ECFE2F164821}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SSIS_Package_Reader</RootNamespace>
+    <AssemblyName>Advanced DB Object Search</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>search-package.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ExcelLibrary">
+      <HintPath>Lib\ExcelLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.SqlServer.ADONETSrc, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Microsoft.SqlServer.ADONETSrc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.ASTasks, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Microsoft.SqlServer.ASTasks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.BulkInsertTask, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Microsoft.SqlServer.BulkInsertTask.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Microsoft.SqlServer.ConnectionInfo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.DataProfilingTask, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Microsoft.SqlServer.DataProfilingTask.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.DmQueryTask, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Microsoft.SqlServer.DmQueryTask.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>Lib\Microsoft.SqlServer.DTSPipelineWrap.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SQLServer.DTSRuntimeWrap, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>Lib\Microsoft.SQLServer.DTSRuntimeWrap.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.ExecPackageTaskWrap, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>Lib\Microsoft.SqlServer.ExecPackageTaskWrap.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.ExecProcTask, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Microsoft.SqlServer.ExecProcTask.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.ExpressionTask, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Microsoft.SqlServer.ExpressionTask.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.FileSystemTask, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Microsoft.SqlServer.FileSystemTask.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.FtpTask, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Microsoft.SqlServer.FtpTask.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.MaintenancePlanTasks, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Microsoft.SqlServer.MaintenancePlanTasks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SQLServer.ManagedDTS, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Microsoft.SQLServer.ManagedDTS.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Management.Sdk.Sfc, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Microsoft.SqlServer.Management.Sdk.Sfc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.MSMQTask, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Microsoft.SqlServer.MSMQTask.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Microsoft.SqlServer.PipelineHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Microsoft.SqlServer.ScriptTask.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.SendMailTask, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Microsoft.SqlServer.SendMailTask.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Smo, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Microsoft.SqlServer.Smo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.SQLTask, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Microsoft.SqlServer.SQLTask.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.TransferDatabasesTask, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Microsoft.SqlServer.TransferDatabasesTask.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.TransferErrorMessagesTask, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Microsoft.SqlServer.TransferErrorMessagesTask.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.TransferJobsTask, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Microsoft.SqlServer.TransferJobsTask.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.TransferLoginsTask, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Microsoft.SqlServer.TransferLoginsTask.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.TransferSqlServerObjectsTask, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Microsoft.SqlServer.TransferSqlServerObjectsTask.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.TransferStoredProceduresTask, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Microsoft.SqlServer.TransferStoredProceduresTask.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.VSTAScriptingLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Microsoft.SqlServer.VSTAScriptingLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.WebServiceTask, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Microsoft.SqlServer.WebServiceTask.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.WMIDRTask, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Microsoft.SqlServer.WMIDRTask.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.WMIEWTask, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Microsoft.SqlServer.WMIEWTask.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.XmlTask, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Microsoft.SqlServer.XmlTask.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdvancedDBObjectSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdvancedDBObjectSearch.Designer.cs">
+      <DependentUpon>AdvancedDBObjectSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonEnum.cs" />
+    <Compile Include="CommonMethods.cs" />
+    <Compile Include="DatabaseInfo.cs" />
+    <Compile Include="ErrorInfo.cs" />
+    <Compile Include="FormScriptPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormScriptPreview.Designer.cs">
+      <DependentUpon>FormScriptPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PackageInfo.cs" />
+    <Compile Include="PackageItem.cs" />
+    <Compile Include="SearchOptions.cs" />
+    <Compile Include="SQLObject.cs" />
+    <Compile Include="SQLServerSMO.cs" />
+    <Compile Include="SSIS Item Factory\ADONetDestinationSearcher.cs" />
+    <Compile Include="SSIS Item Factory\ADONetSourceSearcher.cs" />
+    <Compile Include="SSIS Item Factory\AggregateSearcher.cs" />
+    <Compile Include="SSIS Item Factory\ASExecuteDDLTaskSearcher.cs" />
+    <Compile Include="SSIS Item Factory\ASProcessingTaskSearcher.cs" />
+    <Compile Include="SSIS Item Factory\AuditSearcher.cs" />
+    <Compile Include="SSIS Item Factory\BulkInsertTaskSearcher.cs" />
+    <Compile Include="SSIS Item Factory\CacheTransformSearcher.cs" />
+    <Compile Include="SSIS Item Factory\CharacterMapTransformSearcher.cs" />
+    <Compile Include="SSIS Item Factory\CommonUtility.cs" />
+    <Compile Include="SSIS Item Factory\ConditionalSplitTransformSearcher.cs" />
+    <Compile Include="SSIS Item Factory\CopyColumnTransformSearcher.cs" />
+    <Compile Include="SSIS Item Factory\DataCoversionTransformSearcher.cs" />
+    <Compile Include="SSIS Item Factory\DataFlowTaskSearcher.cs" />
+    <Compile Include="SSIS Item Factory\DataMiningModelTrainingSearcher.cs" />
+    <Compile Include="SSIS Item Factory\DataMiningQueryTransformSearcher.cs" />
+    <Compile Include="SSIS Item Factory\DataProfilingTaskSearcher.cs" />
+    <Compile Include="SSIS Item Factory\DataReaderDestinationSearcher.cs" />
+    <Compile Include="SSIS Item Factory\DbMaintenanceBackupTaskSearcher.cs" />
+    <Compile Include="SSIS Item Factory\DbMaintenanceCheckIntegrityTaskSearcher.cs" />
+    <Compile Include="SSIS Item Factory\DbMaintenanceDefragmentIndexTaskSearcher.cs" />
+    <Compile Include="SSIS Item Factory\DbMaintenanceExecuteAgentJobTaskSearcher.cs" />
+    <Compile Include="SSIS Item Factory\DbMaintenanceFileCleanupTaskSearcher.cs" />
+    <Compile Include="SSIS Item Factory\DbMaintenanceHistoryCleanupTaskSearcher.cs" />
+    <Compile Include="SSIS Item Factory\DbMaintenanceNotifyOperatorTaskSearcher.cs" />
+    <Compile Include="SSIS Item Factory\DbMaintenanceReindexTaskSearcher.cs" />
+    <Compile Include="SSIS Item Factory\DbMaintenanceShrinkTaskSearcher.cs" />
+    <Compile Include="SSIS Item Factory\DbMaintenanceTSQLExecuteTaskSearcher.cs" />
+    <Compile Include="SSIS Item Factory\DbMaintenanceUpdateStatisticsTaskSearcher.cs" />
+    <Compile Include="SSIS Item Factory\DerivedColumnTransformSearcher.cs" />
+    <Compile Include="SSIS Item Factory\DIMProcessingSearcher.cs" />
+    <Compile Include="SSIS Item Factory\DMQueryTaskSearcher.cs" />
+    <Compile Include="SSIS Item Factory\ExcelDestSearcher.cs" />
+    <Compile Include="SSIS Item Factory\ExcelSourceSearcher.cs" />
+    <Compile Include="SSIS Item Factory\ExecPackageTaskSearcher.cs" />
+    <Compile Include="SSIS Item Factory\ExecuteProcessTaskSearcher.cs" />
+    <Compile Include="SSIS Item Factory\ExecuteSQLTaskSearcher.cs" />
+    <Compile Include="SSIS Item Factory\ExportColumnTransformSearcher.cs" />
+    <Compile Include="SSIS Item Factory\FileSystemTaskSearcher.cs" />
+    <Compile Include="SSIS Item Factory\FlatFileDestSearcher.cs" />
+    <Compile Include="SSIS Item Factory\FlatFileSourceSearcher.cs" />
+    <Compile Include="SSIS Item Factory\ForEachLoopSearcher.cs" />
+    <Compile Include="SSIS Item Factory\ForLoopSearcher.cs" />
+    <Compile Include="SSIS Item Factory\FtpTaskSearcher.cs" />
+    <Compile Include="SSIS Item Factory\FuzzyGroupingTransformSearcher.cs" />
+    <Compile Include="SSIS Item Factory\FuzzyLookupTransformSearcher.cs" />
+    <Compile Include="SSIS Item Factory\ImportColumnTransformSearcher.cs" />
+    <Compile Include="SSIS Item Factory\ISSISItem.cs" />
+    <Compile Include="SSIS Item Factory\LookupTransformSearcher.cs" />
+    <Compile Include="SSIS Item Factory\MergeJoinTransformSearcher.cs" />
+    <Compile Include="SSIS Item Factory\MergeTransformSearcher.cs" />
+    <Compile Include="SSIS Item Factory\MessageQueueTaskSearcher.cs" />
+    <Compile Include="SSIS Item Factory\MulticastTransformSearcher.cs" />
+    <Compile Include="SSIS Item Factory\OLEDBCommandTransformSearcher.cs" />
+    <Compile Include="SSIS Item Factory\OLEDBDestSearcher.cs" />
+    <Compile Include="SSIS Item Factory\OLEDBSourceSearcher.cs" />
+    <Compile Include="SSIS Item Factory\PartitionProcessingSearcher.cs" />
+    <Compile Include="SSIS Item Factory\PercentageSamplingTransformSearcher.cs" />
+    <Compile Include="SSIS Item Factory\PivotTransformSearcher.cs" />
+    <Compile Include="SSIS Item Factory\RAWFileDestSearcher.cs" />
+    <Compile Include="SSIS Item Factory\RawFileSourceSearcher.cs" />
+    <Compile Include="SSIS Item Factory\RecordSetDestSearcher.cs" />
+    <Compile Include="SSIS Item Factory\RowCountTransformSearcher.cs" />
+    <Compile Include="SSIS Item Factory\RowSamplingTransformSearcher.cs" />
+    <Compile Include="SSIS Item Factory\ScriptComponentSearcher.cs" />
+    <Compile Include="SSIS Item Factory\ScriptTaskSearcher.cs" />
+    <Compile Include="SSIS Item Factory\SendMailTaskSearcher.cs" />
+    <Compile Include="SSIS Item Factory\SequenceContainerSearcher.cs" />
+    <Compile Include="SSIS Item Factory\SlowlyChangingDimensionTransformSearcher.cs" />
+    <Compile Include="SSIS Item Factory\SortTransformSearcher.cs" />
+    <Compile Include="SSIS Item Factory\SQLServerCompactDestinationSearcher.cs" />
+    <Compile Include="SSIS Item Factory\SQLServerDestSearcher.cs" />
+    <Compile Include="SSIS Item Factory\SSISItemFactory.cs" />
+    <Compile Include="SSIS Item Factory\TermExtractionTransformSearcher.cs" />
+    <Compile Include="SSIS Item Factory\TermLookupTransformSearcher.cs" />
+    <Compile Include="SSIS Item Factory\TransferDatabaseTaskSearcher.cs" />
+    <Compile Include="SSIS Item Factory\TransferErrorMessagesTaskSearcher.cs" />
+    <Compile Include="SSIS Item Factory\TransferJobsTaskSearcher.cs" />
+    <Compile Include="SSIS Item Factory\TransferLoginsTaskSearcher.cs" />
+    <Compile Include="SSIS Item Factory\TransferSqlServerObjectsTaskSearcher.cs" />
+    <Compile Include="SSIS Item Factory\TransferStoredProceduresTaskSearcher.cs" />
+    <Compile Include="SSIS Item Factory\UnionAllTransformSearcher.cs" />
+    <Compile Include="SSIS Item Factory\UnpivotTransformSearcher.cs" />
+    <Compile Include="SSIS Item Factory\WebServiceTaskSearcher.cs" />
+    <Compile Include="SSIS Item Factory\WmiDataReaderTaskSearcher.cs" />
+    <Compile Include="SSIS Item Factory\WmiEventWatcherTaskSearcher.cs" />
+    <Compile Include="SSIS Item Factory\XMLSourceSearcher.cs" />
+    <Compile Include="SSIS Item Factory\XMLTaskSearcher.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\SQLScriptGenerator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SQLScriptGenerator.Designer.cs">
+      <DependentUpon>SQLScriptGenerator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SSRSSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SSRSSearch.Designer.cs">
+      <DependentUpon>SSRSSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PackageSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\PackageSearch.Designer.cs">
+      <DependentUpon>PackageSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SQLSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SQLSearch.Designer.cs">
+      <DependentUpon>SQLSearch.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AdvancedDBObjectSearch.resx">
+      <DependentUpon>AdvancedDBObjectSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormScriptPreview.resx">
+      <DependentUpon>FormScriptPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UserControls\SQLScriptGenerator.resx">
+      <DependentUpon>SQLScriptGenerator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SSRSSearch.resx">
+      <DependentUpon>SSRSSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\PackageSearch.resx">
+      <DependentUpon>PackageSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SQLSearch.resx">
+      <DependentUpon>SQLSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Lib\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Capture.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.png" />
+    <None Include="Resources\SSRSDocumentation.png" />
+    <None Include="Resources\SqlDBSearch.png" />
+    <None Include="Resources\SSISSearch.png" />
+    <None Include="Resources\SSISLogo.jpg" />
+    <None Include="Resources\SSRSLogo.png" />
+    <None Include="Resources\SSRSDocumentation1.png" />
+    <None Include="Resources\SSRSReport.png" />
+    <None Include="Resources\BtnImage.png" />
+    <None Include="Resources\BackGround.png" />
+    <Content Include="search-package.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CheckBoxComboBox\CheckBoxComboBox.csproj">
+      <Project>{70A25201-8EA4-48F8-A4A6-ED13ADF8823C}</Project>
+      <Name>CheckBoxComboBox</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataGridViewAutoFilter\DataGridViewAutoFilter.csproj">
+      <Project>{5A4B4B14-D3B5-4D54-80EC-0877C1E6E73A}</Project>
+      <Name>DataGridViewAutoFilter</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
